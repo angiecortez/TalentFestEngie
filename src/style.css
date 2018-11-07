@@ -1,3 +1,7 @@
 .hola{
 	border-right: solid 5px;
+	/* border-style: solid; */
+}
+.navbar-expand-lg{
+	background-color: #00AAE7;
 }
