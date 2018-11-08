@@ -1,7 +1,13 @@
 .hola{
 	border-right: solid 5px;
-	/* border-style: solid; */
+	background-color: white;
 }
 .navbar-expand-lg{
 	background-color: #00AAE7;
+}
+
+body {
+	background-image: url(image/Fondo.jpg);
+	background-repeat: no-repeat;
+	background-size: 240vh;
 }
