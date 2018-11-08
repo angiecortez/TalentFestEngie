@@ -43,7 +43,7 @@ const chart = (e) => {
         ],
         datasets: [
           {
-            data: [100, 100 - chartStatus],
+            data: [100, 100-chartStatus],
             borderWidth: [0, 0],
             backgroundColor: [
               violet,
@@ -61,20 +61,23 @@ const chart = (e) => {
 }
 const showData = (el) => {
   const card = document.createElement('card');
-  card.setAttribute('class', 'col-7 backCard');
+  card.setAttribute('class', 'col-6 backCard');
   const cardBody = document.createElement('div');
   const cardContainer = document.createElement('div');
-  const nro = document.createElement('p');
-  nro.textContent = `Nro de reporte : ${el.nro}`;
+  const nro = document.createElement('h3');
+	nro.setAttribute('class', 'mt-5')
+  nro.textContent = `Incidencia Nº: ${el.nro}`;
   const description = document.createElement('p');
-  description.textContent = `${el.Description}`
+  description.textContent = `${el.Description}`;
+
   const service = document.createElement('p');
-  service.textContent = `Sede : ${el.Sector}`;
-  const sect = document.createElement('span');
-  sect.textContent = `Sector : ${el.Sede}`;
-  sect.setAttribute('class', 'colorSect');
+  service.textContent = `Sector : ${el.Sector}`;
   const boxBtn = document.createElement('div');
+	boxBtn.setAttribute('class', 'margenButton1234')
   const btnLook = document.createElement('button');
+	const sect = document.createElement('span');
+	sect.textContent = `${el.Sede}`;
+	sect.setAttribute('class', 'colorSect');
   btnLook.setAttribute('type', 'button');
   btnLook.setAttribute('class', 'btn btn-primary');
   btnLook.setAttribute('data-toggle', 'modal');
@@ -82,14 +85,16 @@ const showData = (el) => {
   btnLook.textContent = 'VER';
   const btnPlan = document.createElement('button');
   btnPlan.setAttribute('type', 'button');
-  btnPlan.setAttribute('class', `btn btn-primary`);
+  btnPlan.setAttribute('class', `btn btn-primary mr-3`);
   btnPlan.setAttribute('data-toggle', `modal`);
   btnPlan.setAttribute('data-target', `#plan${el.id}`);
+  // btnPlan.setAttribute('data-target', `.bd-example-modal-lg`);
+
   btnPlan.textContent = 'PLAN';
   cardBody.appendChild(cardContainer);
   cardBody.appendChild(sect);
-  cardBody.appendChild(service);
   cardBody.appendChild(description);
+	cardBody.appendChild(service);
   boxBtn.appendChild(btnPlan);
   boxBtn.appendChild(btnLook);
   cardBody.appendChild(boxBtn);
@@ -98,7 +103,7 @@ const showData = (el) => {
   content.appendChild(card);
   //modal plan
   const modal = document.createElement('div');
-  modal.setAttribute('class', 'modal fade');
+  modal.setAttribute('class', 'modal fade bd-example-modal-lg');
   modal.setAttribute('id', `plan${el.id}`)
   modal.setAttribute('tabindex', '-1');
   modal.setAttribute('role', 'dialog');
@@ -115,6 +120,9 @@ const showData = (el) => {
   title.setAttribute('class', 'modal-title');
   title.setAttribute('id', `m${el.id}`);
   title.textContent = 'Revisión de Estado';
+	const btnGuardarPdf = document.createElement('button');
+	btnGuardarPdf.setAttribute('class', 'btn btn-danger clasPais1');
+	btnGuardarPdf.textContent = 'Descargar'
   const btnClose = document.createElement('button');
   btnClose.setAttribute('type', 'button');
   btnClose.setAttribute('class', 'close');
@@ -127,18 +135,30 @@ const showData = (el) => {
   modalBody.setAttribute('class', 'modal-body');
   const pRes = document.createElement('p');
   pRes.textContent = `Responsable : ${el.Responsable}`;
-  const list = document.createElement('ul');
+  const list = document.createElement('div');
   Object.values(el.Plan).forEach((act) => {
-    const li = document.createElement('li');
+    const li = document.createElement('div');
+		li.setAttribute('class', 'paddingBodyCard')
     li.textContent = act.Accion;
-    const dateSpan = document.createElement('p');
-    dateSpan.textContent = `Fecha límite :${act.fecha}`;
-    li.appendChild(dateSpan)
-    list.appendChild(li)
+    if (act.Observation === 'No se cumplió') {
+      const dateSpan = document.createElement('p');
+      dateSpan.setAttribute('style', 'color:red');
+      dateSpan.setAttribute('class', 'nextStep');
+      dateSpan.textContent = `Fecha límite :${act.fecha} ${act.Observation}`;
+      li.appendChild(dateSpan);
+      list.appendChild(li);
+    } else {
+      const dateSpan = document.createElement('p');
+      dateSpan.setAttribute('style', 'color:green');
+      dateSpan.setAttribute('class', 'nextStep');
+      dateSpan.textContent = `Fecha límite :${act.fecha} ${act.Observation}`;
+      li.appendChild(dateSpan);
+      list.appendChild(li);
+    }
   })
   const pStatus = document.createElement('p');
   pStatus.textContent = `Estado : ${el.status}`;
-const modalFooter = document.createElement('div');
+  const modalFooter = document.createElement('div');
   modalFooter.setAttribute('class', 'modal-footer');
   const btnDetails = document.createElement('button');
   btnDetails.setAttribute('type', 'button');
@@ -163,7 +183,7 @@ const modalFooter = document.createElement('div');
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog)
   content.appendChild(modal);
-//modal ver
+  //modal ver
   const modalLook = document.createElement('div');
   modalLook.setAttribute('class', 'modal fade');
   modalLook.setAttribute('id', `mLook${el.id}`)
@@ -180,7 +200,7 @@ const modalFooter = document.createElement('div');
   const phrase = document.createElement('h5');
   phrase.setAttribute('class', 'modal-title');
   phrase.setAttribute('id', `m${el.id}`);
-  phrase.textContent = 'Revisión de Estado';
+  phrase.textContent = `Revisión de Estado: ${el.nro}`;
   const btnCl = document.createElement('button');
   btnCl.setAttribute('type', 'button');
   btnCl.setAttribute('class', 'close');
@@ -199,6 +219,8 @@ const modalFooter = document.createElement('div');
   btnCl.appendChild(spanCl);
   modalHead.appendChild(btnCl);
   modalBo.appendChild(img);
+  modalBo.appendChild(btnGuardarPdf);
+
   modalCont.appendChild(modalHead);
   modalCont.appendChild(modalBo);
   modalDlg.appendChild(modalCont);
@@ -223,7 +245,7 @@ select.addEventListener('change', selectMonth);
 firebase.database().ref().child('Paises').on('value', function (data) {
   const dataPaises = Object.keys(data.val());
   dataPaises.forEach(el => {
-    countries.innerHTML += `<option>${el}</option>`;
+    countries.innerHTML += `<option class="colorSelect">${el}</option>`;
   });
 })
 const selectCountries = (e) => {

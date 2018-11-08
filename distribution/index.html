@@ -57,8 +57,9 @@
 	<div class="d-flex align-items-stretch">
 		<div id="sidebar" class="sidebar py-3">
 			<div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family"></div>
-				<h5>Filtro</h5>
-				<label class="mt-1">País</label>
+			<p class="pLetter1">HIPOTESIS</p>
+				<p class="filtros">Filtro</p>
+				<h4 class="mt-1 clasPais">País</h4>
 				<select class="custom-select mb-5" id="countries"></select>
 			<ul class="sidebar-menu list-unstyled">
 				<!-- <li> -->
@@ -77,11 +78,11 @@
 			<div class="container-fluid">
 				<section>
 					<div class="container">
+						<p class="pLetter">
+							<span class="borderSpan">Hist</span>orial de Incidencia
+						</p>
 						<div class="row">
-							<div class="input-group-text col-3 mt-5  mr-5">
-								<label class="input-group-text">Mes</label>
-								<select id="select" class="custom-select"></select>
-							</div>
+							<select id="select" class="custom-select-lg colorSelect"></select>
 						</div>
 					</div>
 				</section>
@@ -116,6 +117,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 	<script src="js/charts-home.js"></script>
 	<script src="js/front.js"></script>
+	<script src="mandrill.js"></script>
 	<script src="data.js"></script>
 
 
