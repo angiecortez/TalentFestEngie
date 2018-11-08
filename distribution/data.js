@@ -25,6 +25,10 @@ const showData = (el) => {
 
   const boxBtn = document.createElement('div');
   const btnLook = document.createElement('button');
+  btnLook.setAttribute('type', 'button');
+  btnLook.setAttribute('class', 'btn btn-primary');
+  btnLook.setAttribute('data-toggle', 'modal');
+  btnLook.setAttribute('data-target', `#mLook${el.id}`);
   btnLook.textContent = 'VER';
   const btnPlan = document.createElement('button');
   btnPlan.setAttribute('type', 'button');
