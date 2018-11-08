@@ -16,7 +16,7 @@ const chart = (e) => {
   content.innerHTML += `
             <div class="col-4 backCard1">
               <div class="card-header">
-               <h2 class="h6 text-uppercase mb-0">Porcentaje de Incidendias</h2>
+               <h2 class="h6 text-uppercase mb-0">Porcentaje de Incidencias</h2>
               </div>
              <div class="card-body">
                <div class="chart-holder">
