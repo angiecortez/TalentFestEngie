@@ -20,7 +20,7 @@ const chart = (e) => {
               </div>
              <div class="card-body">
                <div class="chart-holder">
-               
+
                 <canvas id="${idChart}"></canvas>
                </div>
               </div>
@@ -192,7 +192,8 @@ const modalFooter = document.createElement('div');
   const modalBo = document.createElement('div');
   modalBo.setAttribute('class', 'modal-body');
   const img = document.createElement('img');
-  img.setAttribute('src', 'https://raw.githubusercontent.com/JoselynSilva/TalentFestEngie/practica/distribution/image/reporte.jpg');
+  img.setAttribute('src', 'image/incidencias.jpg');
+  img.setAttribute('class', 'centrar');
   img.setAttribute('alt', 'info');
   modalHead.appendChild(phrase);
   btnCl.appendChild(spanCl);
