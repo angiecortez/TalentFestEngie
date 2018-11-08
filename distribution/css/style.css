@@ -1,0 +1,52 @@
+.hola{
+	border-right: solid 5px;
+	background-color: white;
+}
+.navbar-expand-lg{
+	background-color: #00AAE7;
+}
+
+body {
+	/* background-image: url(../image/Fondo.jpg); */
+	background: linear-gradient(rgba(255,254, 253, 0.8), rgba(255, 254, 253, 0.1)), url(../image/Fondo.jpg) center fixed;
+	background-repeat: no-repeat;
+	background-size: 200vh;
+}
+.pagination{
+	margin-left: 75%;
+	margin-top: 80%;
+}
+.input-group-text{
+	color: #419df4;
+}
+.custom-select-lg{
+	color: #419df4;
+}
+.card{
+	margin-top: 20px;
+	margin-left: 50px;
+	padding: 20px;
+}
+.colorSect{
+	color: blue;
+}
+.pieChart2{
+	width: 50px;
+}
+
+.backCard{
+	background: white;
+	margin-top: 10px;
+	/* border-radius: 10px; */
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.backCard1{
+	background: white;
+	margin-top: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+
+	/* border-radius: 10px; */
+	/* margin-right: 5px; */
+}
