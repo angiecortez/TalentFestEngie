@@ -101,6 +101,48 @@ const showData = (el) => {
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog)
   content.appendChild(modal);
+  //modal ver
+  const modalLook = document.createElement('div');
+  modalLook.setAttribute('class', 'modal fade');
+  modalLook.setAttribute('id', `mLook${el.id}`)
+  modalLook.setAttribute('tabindex', '-1');
+  modalLook.setAttribute('role', 'dialog');
+  // modalLook.setAttribute('aria-labelledby', `m${el.id}`);
+  modalLook.setAttribute('aria-hidden', 'true');
+  const modalDlg = document.createElement('div');
+  modalDlg.setAttribute('class', 'modal-dialog modal-dialog-centered');
+  modalDlg.setAttribute('role', 'document');
+  const modalCont = document.createElement('div');
+  modalCont.setAttribute('class', 'modal-content');
+  const modalHead = document.createElement('div');
+  modalHead.setAttribute('class', 'modal-header');
+  const phrase = document.createElement('h5');
+  phrase.setAttribute('class', 'modal-title');
+  phrase.setAttribute('id', `m${el.id}`);
+  phrase.textContent = 'Revisión de Estado';
+  const btnCl = document.createElement('button');
+  btnCl.setAttribute('type', 'button');
+  btnCl.setAttribute('class', 'close');
+  btnCl.setAttribute('data-dismiss', 'modal');
+  btnCl.setAttribute('arial-label', 'Close');
+  const spanCl = document.createElement('span');
+  spanCl.setAttribute('aria-hidden', 'true');
+  spanCl.textContent = 'x';
+  const modalBo = document.createElement('div');
+  modalBo.setAttribute('class', 'modal-body');
+  const img = document.createElement('img');
+  img.setAttribute('src','https://raw.githubusercontent.com/JoselynSilva/TalentFestEngie/practica/distribution/image/reporte.jpg');
+  img.setAttribute('alt','info');
+  // img.setAttribute('class','');
+  modalHead.appendChild(phrase);
+  btnCl.appendChild(spanCl);
+  modalHead.appendChild(btnCl);
+  modalBo.appendChild(img);
+  modalCont.appendChild(modalHead);
+  modalCont.appendChild(modalBo);
+  modalDlg.appendChild(modalCont);
+  modalLook.appendChild(modalDlg)
+  content.appendChild(modalLook);
 }
 const selectMonth = (e) => {
   const val = e.target.value;
