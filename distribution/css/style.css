@@ -1,3 +1,14 @@
+.hola{
+	border-right: solid 5px;
+	background-color: white;
+}
 .navbar-expand-lg{
 	background-color: #00AAE7;
+}
+
+body {
+	/* background-image: url(../image/Fondo.jpg); */
+	background: linear-gradient(rgba(255,254, 253, 0.8), rgba(255, 254, 253, 0.1)), url(../image/Fondo.jpg) center fixed;
+	background-repeat: no-repeat;
+	background-size: 200vh;
 }
