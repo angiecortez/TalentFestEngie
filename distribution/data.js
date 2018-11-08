@@ -131,14 +131,23 @@ const showData = (el) => {
   Object.values(el.Plan).forEach((act) => {
     const li = document.createElement('li');
     li.textContent = act.Accion;
-    const dateSpan = document.createElement('p');
-    dateSpan.textContent = `Fecha límite :${act.fecha}`;
-    li.appendChild(dateSpan)
-    list.appendChild(li)
+    if (act.Observation === 'No se cumplió') {
+      const dateSpan = document.createElement('p');
+      dateSpan.setAttribute('style', 'color:red');
+      dateSpan.textContent = `Fecha límite :${act.fecha} ${act.Observation}`;
+      li.appendChild(dateSpan);
+      list.appendChild(li);
+    } else {
+      const dateSpan = document.createElement('p');
+      dateSpan.setAttribute('style', 'color:green');
+      dateSpan.textContent = `Fecha límite :${act.fecha} ${act.Observation}`;
+      li.appendChild(dateSpan);
+      list.appendChild(li);
+    }
   })
   const pStatus = document.createElement('p');
   pStatus.textContent = `Estado : ${el.status}`;
-const modalFooter = document.createElement('div');
+  const modalFooter = document.createElement('div');
   modalFooter.setAttribute('class', 'modal-footer');
   const btnDetails = document.createElement('button');
   btnDetails.setAttribute('type', 'button');
@@ -163,7 +172,7 @@ const modalFooter = document.createElement('div');
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog)
   content.appendChild(modal);
-//modal ver
+  //modal ver
   const modalLook = document.createElement('div');
   modalLook.setAttribute('class', 'modal fade');
   modalLook.setAttribute('id', `mLook${el.id}`)
