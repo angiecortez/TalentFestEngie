@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 	<meta charset="utf-8">
@@ -19,7 +19,6 @@
 	<!-- theme stylesheet-->
 	<link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
 	<!-- Custom stylesheet - for your changes-->
-	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Favicon-->
 	<link rel="shortcut icon" href="image/engie.png">
@@ -84,13 +83,45 @@
 							<select class="custom-select-lg" id="countries"></select>
 					</div>
 					<div id="content"></div>
+					<div>
+						<div class="card mb-4">
+              <div class="card-header">
+                <h2 class="h6 text-uppercase mb-0">Pie chart Example</h2>
+              </div>
+              <div class="card-body">
+                <div class="chart-holder">
+                  <canvas class="pieChart2"></canvas>
+                </div>
+              </div>
+            </div>
+					</div>
 					</div>
 				
 				</section>
+
+
+				<ul class="pagination">
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+								<span class="sr-only">Previous</span>
+							</a>
+						</li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+								<span class="sr-only">Next</span>
+							</a>
+						</li>
+				</ul>
 			</div>
 
 			</div>
 
+			
 			<footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
 				<div class="container-fluid">
 					<div class="row">
@@ -105,7 +136,7 @@
 				</div>
 			</footer>
 		</div>
-	</div>
+	<!-- </div> -->
 
 	<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
 	<script>
@@ -128,6 +159,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 	<script src="js/charts-home.js"></script>
 	<script src="js/front.js"></script>
+	<script src="js/charts-custom.js"></script>
 	<script src="data.js"></script>
 
 

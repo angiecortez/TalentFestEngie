@@ -12,6 +12,10 @@ body {
 	background-repeat: no-repeat;
 	background-size: 200vh;
 }
+.pagination{
+	margin-left: 75%;
+	margin-top: 80%;
+}
 .input-group-text{
 	color: #419df4;
 }
@@ -25,4 +29,7 @@ body {
 }
 .colorSect{
 	color: blue;
+}
+.pieChart2{
+	width: 50px;
 }

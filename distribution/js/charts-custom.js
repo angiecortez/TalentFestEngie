@@ -56,7 +56,7 @@ $(function () {
     // ------------------------------------------------------- //
    // Pie Chart
    // ------------------------------------------------------ //
-   var PIECHART = $('#pieChart2');
+   var PIECHART = document.querySelectorAll('.pieChart2');
    var myPieChart = new Chart(PIECHART, {
        type: 'doughnut',
        options: {
