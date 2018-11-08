@@ -10,19 +10,23 @@ firebase.database().ref().child('Meses').on('value', function (data) {
 const showData = (el) => {
   const card = document.createElement('card');
   card.setAttribute('class', 'card');
+
   const cardBody = document.createElement('div');
   const cardContainer = document.createElement('div');
   const nro = document.createElement('p');
   nro.textContent = `Nro de reporte : ${el.nro}`;
   const service = document.createElement('p');
+
   service.textContent = `Sede : ${el.Sector}`;
   const sect = document.createElement('span');
   sect.textContent = `Sector : ${el.Sede}`;
+  sect.setAttribute('class', 'colorSect');
+
   const boxBtn = document.createElement('div');
   const btnLook = document.createElement('button');
   btnLook.textContent = 'VER';
   const btnPlan = document.createElement('button');
-  btnPlan.setAttribute('type', `button`);
+  btnPlan.setAttribute('type', 'button');
   btnPlan.setAttribute('class', `btn btn-primary`);
   btnPlan.setAttribute('data-toggle', `modal`);
   btnPlan.setAttribute('data-target', `#${el.id}`);

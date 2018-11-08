@@ -12,3 +12,17 @@ body {
 	background-repeat: no-repeat;
 	background-size: 200vh;
 }
+.input-group-text{
+	color: #419df4;
+}
+.custom-select-lg{
+	color: #419df4;
+}
+.card{
+	margin-top: 20px;
+	margin-left: 50px;
+	padding: 20px;
+}
+.colorSect{
+	color: blue;
+}
