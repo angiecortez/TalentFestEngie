@@ -89,8 +89,8 @@ const showData = (el) => {
 
 
   // MODAL CHART
-  const modalChart = document.createElement('div');
-  modalChart.setAttribute('class', 'card mb-4')
+  // const modalChart = document.createElement('div');
+  // modalChart.setAttribute('class', 'card mb-4')
   const modalCardChart = document.createElement('div');
   modalCardChart.setAttribute('class', 'card-header')
   const modalH2 = document.createElement('h2');
@@ -132,12 +132,12 @@ const showData = (el) => {
   modalBody.appendChild(pStatus);
 
 
-  modalChart.appendChild(modalCardChart)
-  modalChart.appendChild(modalCardBody)
+  // modalChart.appendChild(modalCardChart)
+  // modalChart.appendChild(modalCardBody)
 
-  modalCardChart.appendChild(modalH2)
-  modalCardBody.appendChild(modalChartHolder)
-  modalChartHolder.appendChild(modalCanva)
+  // modalCardChart.appendChild(modalH2)
+  // modalCardBody.appendChild(modalChartHolder)
+  // modalChartHolder.appendChild(modalCanva)
 
 
 
@@ -147,7 +147,7 @@ const showData = (el) => {
   modalContent.appendChild(modalHeader);
   modalContent.appendChild(modalBody);
   modalContent.appendChild(modalFooter);
-  modalContent.appendChild(modalChart);
+  // modalContent.appendChild(modalChart);
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog)
   content.appendChild(modal);
@@ -233,11 +233,11 @@ const selectCountries = (e) => {
           content.innerHTML += `
           <div class="col-4 backCard1">
             <div class="card-header">
-             <h2 class="h6 text-uppercase mb-0">Pie chart Example</h2>
+             <h2 class="h6 text-uppercase mb-0">Porcentaje de Incidendias</h2>
             </div>
            <div class="card-body">
              <div class="chart-holder">
-             <p>hola</p>
+             
               <canvas id="${idChart}"></canvas>
              </div>
             </div>
