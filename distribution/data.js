@@ -89,14 +89,13 @@ const showData = (el) => {
   modalCardChart.setAttribute('class', 'card-header')
   const modalH2 = document.createElement('h2');
   modalH2.setAttribute('class', 'h6 text-uppercase mb-0')
-  modalCanva.textContent = 'hola'
-
   const modalCardBody = document.createElement('div');
   modalCardBody.setAttribute('class', 'card-body')
   const modalChartHolder = document.createElement('div');
   modalChartHolder.setAttribute('class', 'chart-holder')
   const modalCanva= document.createElement('canvas');
   modalCanva.setAttribute('class', 'pieChart2')
+  modalCanva.textContent = 'hola'
 
 //   <div class="card mb-4">
 //   <div class="card-header">
@@ -131,8 +130,8 @@ const showData = (el) => {
   modalChart.appendChild(modalCardBody)
 
   modalCardChart.appendChild(modalH2)
-  modalChartHolder.appendChild(modalCanva)
   modalCardBody.appendChild(modalChartHolder)
+  modalChartHolder.appendChild(modalCanva)
 
 
 
