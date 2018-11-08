@@ -21,15 +21,13 @@ function dibujar() {
         ]
     );
     let opciones = {
-        'title': 'incidencias',
-        'width': 1000,
+        'title': 'Incidencias',
+        'width': 800,
         'height': 300,
     }
     let grafico = new google.visualization.PieChart(document.getElementById('chart'));
     grafico.draw(data, opciones);
 }
-//
-
 google.load('visualization', '1.0', { 'packages': ['corechart'] });
 google.setOnLoadCallback(draw);
 function draw() {
@@ -66,7 +64,7 @@ function draw() {
         );
         let opc = {
             'title': 'Cantidad de hipos presentados',
-            'width': 1000,
+            'width': 800,
             'height': 300,
         }
         let grafico = new google.visualization.PieChart(document.getElementById('chartHipos'));
