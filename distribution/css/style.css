@@ -7,7 +7,6 @@
 }
 
 body {
-	/* background-image: url(../image/Fondo.jpg); */
 	background: linear-gradient(rgba(255,254, 253, 0.8), rgba(255, 254, 253, 0.1)), url(../image/Fondo.jpg) center fixed;
 	background-repeat: no-repeat;
 	background-size: 200vh;
@@ -22,14 +21,6 @@ body {
 .custom-select-lg{
 	color: #419df4;
 }
-.card{
-	margin-top: 20px;
-	margin-left: 50px;
-	padding: 20px;
-}
-.colorSect{
-	color: blue;
-}
 .pieChart2{
 	width: 50px;
 }
@@ -37,7 +28,6 @@ body {
 .backCard{
 	background: white;
 	margin-top: 10px;
-	/* border-radius: 10px; */
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -103,5 +93,5 @@ body {
 	border-radius: 20px;
 }
 .nextStep{
-	font-size: 20px;	
+	font-size: 20px;
 }
