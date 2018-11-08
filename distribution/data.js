@@ -14,8 +14,8 @@ green  = '#7CF29C';
 
 
 const showData = (el) => {
-  const card = document.createElement('card');
-  card.setAttribute('class', 'card');
+  const card = document.createElement('div');
+  card.setAttribute('class', 'col-7 backCard');
   const cardBody = document.createElement('div');
   const cardContainer = document.createElement('div');
   const nro = document.createElement('p');
@@ -231,7 +231,7 @@ const selectCountries = (e) => {
           
           const idChart = e.id  
           content.innerHTML += `
-          <div class="card mb-4">
+          <div class="col-4 backCard1">
             <div class="card-header">
              <h2 class="h6 text-uppercase mb-0">Pie chart Example</h2>
             </div>
