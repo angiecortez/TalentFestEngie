@@ -10,13 +10,14 @@ firebase.database().ref().child('Meses').on('value', function (data) {
 const showData = (el) => {
   const card = document.createElement('card');
   card.setAttribute('class', 'card');
-
   const cardBody = document.createElement('div');
   const cardContainer = document.createElement('div');
   const nro = document.createElement('p');
   nro.textContent = `Nro de reporte : ${el.nro}`;
+  const description = document.createElement('p');
+  description.textContent = `${el.Description}`
   const service = document.createElement('p');
-
+  
   service.textContent = `Sede : ${el.Sector}`;
   const sect = document.createElement('span');
   sect.textContent = `Sector : ${el.Sede}`;
@@ -34,6 +35,7 @@ const showData = (el) => {
   cardBody.appendChild(cardContainer);
   cardBody.appendChild(sect);
   cardBody.appendChild(service);
+  cardBody.appendChild(description);
   boxBtn.appendChild(btnPlan);
   boxBtn.appendChild(btnLook);
   cardBody.appendChild(boxBtn);
