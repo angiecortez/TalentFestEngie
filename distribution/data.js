@@ -1,14 +1,14 @@
 const select = document.getElementById('select');
 const countries = document.getElementById('countries');
 const content = document.getElementById('content');
-firebase.database().ref().child('Meses').on('value', function (data) {
+firebase.database().ref().child('Meses').on('value', data => {
   const dataMeses = Object.values(data.val());
   dataMeses.forEach(element => {
     select.innerHTML += `<option>${element}</option>`;
   });
 })
 
-var violet = '#DF99CA',
+const violet = '#DF99CA',
 red    = '#F0404C',
 green  = '#7CF29C';
 
@@ -40,7 +40,7 @@ const showData = (el) => {
   btnPlan.setAttribute('type', 'button');
   btnPlan.setAttribute('class', `btn btn-primary`);
   btnPlan.setAttribute('data-toggle', `modal`);
-  btnPlan.setAttribute('data-target', `#${el.id}`);
+  btnPlan.setAttribute('data-target', `plan${el.id}`);
   btnPlan.textContent = 'PLAN';
   cardBody.appendChild(cardContainer);
   cardBody.appendChild(sect);
@@ -89,30 +89,7 @@ const showData = (el) => {
 
 
   // MODAL CHART
-  // const modalChart = document.createElement('div');
-  // modalChart.setAttribute('class', 'card mb-4')
-  const modalCardChart = document.createElement('div');
-  modalCardChart.setAttribute('class', 'card-header')
-  const modalH2 = document.createElement('h2');
-  modalH2.setAttribute('class', 'h6 text-uppercase mb-0')
-  const modalCardBody = document.createElement('div');
-  modalCardBody.setAttribute('class', 'card-body')
-  const modalChartHolder = document.createElement('div');
-  modalChartHolder.setAttribute('class', 'chart-holder')
-  const modalCanva= document.createElement('canvas');
-  modalCanva.setAttribute('class', 'pieChart2')
-  modalCanva.textContent = 'hola'
 
-//   <div class="card mb-4">
-//   <div class="card-header">
-//     <h2 class="h6 text-uppercase mb-0">Pie chart Example</h2>
-//   </div>
-//   <div class="card-body">
-//     <div class="chart-holder">
-//       <canvas id="pieChart2"></canvas>
-//     </div>
-//   </div>
-// </div>
   const modalFooter = document.createElement('div');
   modalFooter.setAttribute('class', 'modal-footer');
   const btnDetails = document.createElement('button');
@@ -131,23 +108,11 @@ const showData = (el) => {
   modalBody.appendChild(pDate);
   modalBody.appendChild(pStatus);
 
-
-  // modalChart.appendChild(modalCardChart)
-  // modalChart.appendChild(modalCardBody)
-
-  // modalCardChart.appendChild(modalH2)
-  // modalCardBody.appendChild(modalChartHolder)
-  // modalChartHolder.appendChild(modalCanva)
-
-
-
-
   modalFooter.appendChild(btnDetails);
   modalFooter.appendChild(btnCls);
   modalContent.appendChild(modalHeader);
   modalContent.appendChild(modalBody);
   modalContent.appendChild(modalFooter);
-  // modalContent.appendChild(modalChart);
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog)
   content.appendChild(modal);
@@ -157,7 +122,6 @@ const showData = (el) => {
   modalLook.setAttribute('id', `mLook${el.id}`)
   modalLook.setAttribute('tabindex', '-1');
   modalLook.setAttribute('role', 'dialog');
-  // modalLook.setAttribute('aria-labelledby', `m${el.id}`);
   modalLook.setAttribute('aria-hidden', 'true');
   const modalDlg = document.createElement('div');
   modalDlg.setAttribute('class', 'modal-dialog modal-dialog-centered');
