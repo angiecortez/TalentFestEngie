@@ -7,8 +7,9 @@ const sendEmailMandrill = (el) => {
             'message': {
                 "html": `<div>
           <p>Estimado colaborador, gracias por estar al día con el seguimiento de la incidencia registrada
-          en la región:  ${el.Region}. 
+          en la región:  ${el.Region}.
          Recuerde, que estamos para apoyarlo.</p>
+				 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Logo-engie.svg/1200px-Logo-engie.svg.png" width="100" height="50" class="d-inline-block" alt="engie">
          Atte.
          Empresa ENGIE
          </div>`,
@@ -35,7 +36,7 @@ const sendEmailMandrill = (el) => {
     });
 }
 
-firebase.database().ref().child('Incidencia').on('value', function (data) {
+firebase.database().ref().child('Incidencia').on('value', data => {
     const incident = Object.values(data.val());
     content.innerHTML = '';
     incident.forEach((ele) => {
